@@ -18,7 +18,11 @@
 
 - (CGRect)sam_boundsForOrientation:(UIInterfaceOrientation)orientation {
 	CGRect bounds = [self bounds];
-
+	
+	if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+		return bounds;
+	}
+	
 	if (UIInterfaceOrientationIsLandscape(orientation)) {
 		CGFloat buffer = bounds.size.width;
 
